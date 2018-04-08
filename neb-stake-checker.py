@@ -8,7 +8,7 @@ import slackweb
 import config
 
 NEB_MOST_RECENT_TRANSACTION_CMD = \
-    "%s listtransactions | jq 'map(select(.category==\"generate\")) | sort_by(.time) | last(.[].amount)'" % config.NEB_EXEC
+    "%s listtransactions | jq 'map(select(.category==\"generate\")) | sort_by(.time) | last(.[].amount)'" % config.NEB_WALLET_EXEC_PATH
 
 class NeblioStakeChecker:
 
