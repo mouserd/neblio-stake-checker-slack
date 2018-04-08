@@ -38,7 +38,7 @@ sudo apt-get install python-pip
 Once PIP is installed, install the following required Python libraries:
 
 ```
-sudo pip install slackclient
+sudo pip install slackweb
 ```
 
 We also need a utility called [jq](https://stedolan.github.io/jq/) which is command-line tool for parsing and querying json:
