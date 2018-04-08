@@ -7,7 +7,7 @@ has earned a new stake.
 <table width="60%" align="center" padding=0 margin=0>
     <tr>
         <td style="padding:0">
-            <img src="https://github.com/mouserd/neblio-slack-bot/blob/master/assets/neblio-stake-checker-example.png" 
+            <img src="https://github.com/mouserd/neblio-slack-bot/blob/master/assets/neblio-stake-checker-example-notification.png" 
                 title="Neblio Stake Checker" alt="Neblio Stake Checker" width="520" />
         </td>
     </tr>
@@ -66,7 +66,7 @@ The first time this runs, if setup correctly you should receive a slack notifica
 <table width="60%" align="center" padding=0 margin=0>
     <tr>
         <td style="padding:0">
-            <img src="https://github.com/mouserd/neblio-slack-bot/blob/master/assets/neblio-stake-checker-setup-success.png" 
+            <img src="https://github.com/mouserd/neblio-stake-checker-slack/blob/master/assets/neblio-stake-setup-success.png" 
                 title="Neblio Stake Checker" alt="Neblio Stake Checker" width="520" />
         </td>
     </tr>
