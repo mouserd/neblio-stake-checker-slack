@@ -50,18 +50,21 @@ sudo apt-get install jq
 
 ## Installation 
 
+### Basic Setup
+
 Once you have satisfied all of the [pre-requisites](#pre-requisites), simply copy both the `neb-stake-checker.py` and `config.py` scripts
 to your `pi` users home directory (`/home/pi`).  Edit the `config.py` python script and replace the `<<ADD YOUR SLACK WEBHOOK URL HERE>>` 
 with the webhook you created for your Slack workspace.  You can also update the other properties in the `config.py` such as the channel, 
 username, and emoji that the notification will be posted as.
 
-To test that your Neblio Stake Checker is working, start the main python script by running:
+To test that your Neblio Stake Checker is working, start the main python script by running the Python script from your Raspberry Pi 
+terminal/ssh session:
 
 ```
 python /home/pi/neb-stake-checker.py
 ```
 
-The first time this runs, if setup correctly you should receive a slack notification to demonstrate that it has been configured correctly:
+The first time this runs, if everything is setup correctly, you should receive a slack notification to demonstrate that it has been configured correctly:
 
 <table width="60%" align="center" padding=0 margin=0>
     <tr>
@@ -72,13 +75,15 @@ The first time this runs, if setup correctly you should receive a slack notifica
     </tr>
 </table>
 
+### Automatic Scheduling
 
-Once the above is working you can setup your Raspberry Pi to run this on a regular interval.  To do this we use a tool called cron and I have
-mine setup to check for new neblio stakes every 10 minutes.  To setup cron run the following command in your Raspberry Pi terminal/ssh session:
+Once the Basic Setup is complete you can setup your Raspberry Pi to run automatically on a regular interval.  To do this we use a tool 
+pre-installed on all Raspberry Pi's called cron and I have mine setup to check for new neblio stakes every 10 minutes.  
+To setup cron run the following command in your Raspberry Pi terminal/ssh session:
 
 ```crontab -e```
 
-To the resulting file, add the following to the bottom:
+In the resulting file, add the following to the bottom:
 ```
 */10 * * * * /usr/bin/python /home/pi/neb-stake-checker.py >> /var/log/neb-stake-checker.log 2>&1
 ```
