@@ -18,10 +18,10 @@ has earned a new stake.
 
 ### Slack
 
-This project requires that you setup a Slack webhook that the script will send details to when it detects you've earned a new stake.  To setup
-a Slack webhook, simply:
+This project requires that you setup a Slack WebHook that the script will send details to when it detects you've earned a new stake.  To setup
+a Slack WebHook, simply:
 
-1. Create a new incoming webhook here: [https://my.slack.com/services/new/incoming-webhook/](https://my.slack.com/services/new/incoming-webhook/)
+1. Create a new incoming WebHook here: [https://my.slack.com/services/new/incoming-webhook/](https://my.slack.com/services/new/incoming-webhook/)
 2. Choose the slack channel that you wish the notifications to be published to
 3. Click the "Add Incoming WebHooks integration" button and copy the subsequent "Webhook URL", we'll need that later
 
