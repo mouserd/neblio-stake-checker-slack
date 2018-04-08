@@ -1,5 +1,3 @@
-import logging
-
 SLACK_WEB_HOOK_URL = '<<ADD YOUR SLACK WEBHOOK URL HERE>>'
 SLACK_CHANNEL = "#general"
 SLACK_USERNAME = "Admin"
