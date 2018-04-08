@@ -1,6 +1,5 @@
 import filecmp
 import json
-import logging
 import os
 import subprocess
 
@@ -10,11 +9,6 @@ import config
 
 NEB_MOST_RECENT_TRANSACTION_CMD = \
     "/home/pi/nebliod listtransactions | jq 'map(select(.category==\"generate\")) | sort_by(.time) | last(.[].amount)'"
-
-logging.basicConfig(filename='%s/slack-bot.log' % config.LOG_PATH,
-                    format='%(asctime)s: [%(levelname)s] %(message)s',
-                    level=config.LOG_LEVEL)
-
 
 class NeblioStakeChecker:
 
@@ -28,7 +22,7 @@ class NeblioStakeChecker:
 
     def check(self):
         last_stake_amount = self.__fetch_most_recent_stake()
-        logging.info('Last stake amount: %s' % last_stake_amount)
+        print('Last stake amount: %s' % last_stake_amount)
         self.__write_most_recent_stake(config.NEB_CURRENT_STAKE_FILE, last_stake_amount)
 
         if not os.path.exists(config.NEB_PREVIOUS_STAKE_FILE):
