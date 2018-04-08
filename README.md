@@ -4,11 +4,11 @@
 This project allows you to know get notified via a Slack notification when your [Neblio](https://nebl.io) Wallet installed on a Raspberry Pi 
 has earned a new stake.
 
-<table width="60%" align="center" padding=0 margin=0 id="neblio-slack-bot-demo">
+<table width="60%" align="center" padding=0 margin=0>
     <tr>
         <td style="padding:0">
-            <img src="https://github.com/mouserd/neblio-slack-bot/blob/master/assets/neblio-stack-checker-example.png" 
-                title="Neblio Slack Bot" alt="Neblio Slack Bot" width="520" />
+            <img src="https://github.com/mouserd/neblio-slack-bot/blob/master/assets/neblio-stake-checker-example.png" 
+                title="Neblio Stake Checker" alt="Neblio Stake Checker" width="520" />
         </td>
     </tr>
 </table>
@@ -63,32 +63,33 @@ python /home/pi/neb-stake-checker.py
 
 The first time this runs, if setup correctly you should receive a slack notification to demonstrate that it has been configured correctly:
 
-<table width="60%" align="center" padding=0 margin=0 id="neblio-slack-bot-demo">
+<table width="60%" align="center" padding=0 margin=0>
     <tr>
         <td style="padding:0">
-            <img src="https://github.com/mouserd/neblio-slack-bot/blob/master/assets/neblio-stack-checker-setup-success.png" 
-                title="Neblio Slack Bot" alt="Neblio Slack Bot" width="520" />
+            <img src="https://github.com/mouserd/neblio-slack-bot/blob/master/assets/neblio-stake-checker-setup-success.png" 
+                title="Neblio Stake Checker" alt="Neblio Stake Checker" width="520" />
         </td>
     </tr>
 </table>
 
 
-Once the above is working it's best to ensure that the python script is run on reboot of your Raspberry Pi.  To
-do this, edit your cron using:
+Once the above is working you can setup your Raspberry Pi to run this on a regular interval.  To do this we use a tool called cron and I have
+mine setup to check for new neblio stakes every 10 minutes.  To setup cron run the following command in your Raspberry Pi terminal/ssh session:
 
 ```crontab -e```
 
-And add the following to the bottom of the file:
+To the resulting file, add the following to the bottom:
 ```
-@reboot /usr/bin/python /home/pi/scripts/neb-slack-bot.py 30 >> /var/log/neb/slack-bot.log 2>&1
+*/10 * * * * /usr/bin/python /home/pi/neb-stake-checker.py >> /var/log/neb-stake-checker.log 2>&1
 ```
+
 Save and exit your cron.
 
-
+Now all you need to do is sit back and wait to be notified of your next stake! :rocket:
 
 ## Donate / Tip :dollar:
 
-:thumbsup: I hope you've found the **Neblio Slack Bot** useful!  If you'd like to donate or tip me to assist with the cost of building and maintaining 
+:thumbsup: I hope you've found the **Neblio Stake Checker** useful!  If you'd like to donate or tip me to assist with the cost of building and maintaining 
 this project then it would be much appreciated.
 
 Neblio Address: ﻿`NbmG8tDpXVvjjac4UAmtsuitFAHf9YHcD3`
