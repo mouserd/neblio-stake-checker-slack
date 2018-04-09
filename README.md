@@ -83,12 +83,12 @@ To setup cron run the following command in your Raspberry Pi terminal/ssh sessio
 
 ```crontab -e```
 
-In the resulting file, add the following to the bottom:
+In the resulting file, add the following to the bottom, making sure to leave a blank line at the end:
 ```
 */10 * * * * /usr/bin/python /home/pi/neb-stake-checker.py >> /var/log/neb-stake-checker.log 2>&1
 ```
 
-Save and exit your cron.
+Save and exit your cron (Ctrl+X if using nano).
 
 Now all you need to do is sit back and wait to be notified of your next stake! :rocket:
 
